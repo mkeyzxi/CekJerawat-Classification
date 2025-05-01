@@ -1,25 +1,23 @@
-const Footer = () => {
-	return (
-		<header class="flex justify-between items-center px-6 md:px-12 py-6">
-		<div class="text-2xl font-bold">
-			<span class="text-pink-400">
-				Acne
-			</span>
-			<span class="text-sky-400">
-				Scan
-			</span>
-		</div>
-		<nav class="flex space-x-6 text-sm font-medium">
-			<a class="bg-pink-400 text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#">
-				Home
-			</a>
-			<a class="text-pink-300 hover:text-pink-400 transition" href="#">
-				Upload
-			</a>
-			<a class="text-pink-300 hover:text-pink-400 transition" href="#">
-				About Us
-			</a>
-		</nav>
-	</header>
-	)
+class FooterComponent extends HTMLElement {
+
+
+	connectedCallback() {
+		this.render();
+	}
+	
+	render() {
+		this.innerHTML = `
+		<footer class="bg-pink-400 text-white text-xs sm:text-sm md:text-base py-3 mt-6 rounded-t-3xl shadow-inner">
+   <div class="flex items-center justify-center space-x-2 select-none px-8 max-w-screen-lg mx-auto">
+	 <hr class="border-white border-t border-opacity-50 flex-grow"/>
+	 <span class="flex items-center whitespace-nowrap">
+	   &copy; 2025 CekJerawat | DBSdicoding
+	 </span>
+	 <hr class="border-white border-t border-opacity-50 flex-grow"/>
+   </div>
+ </footer>
+	 `;
+	}
 }
+
+customElements.define('footer-component', FooterComponent)

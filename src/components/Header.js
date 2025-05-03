@@ -1,11 +1,17 @@
 // components/HeaderComponent.js
 class HeaderComponent extends HTMLElement {
+
+
 	connectedCallback() {
+		this.render();
+	}
+
+	render() {
 		this.innerHTML = `
 		<header class="flex justify-between items-center px-6 md:px-12 py-6">
 		  <div class="text-2xl font-bold">
-			<span class="text-pink-400">Acne</span>
-			<span class="text-sky-400">Scan</span>
+			<span class="text-pink-400">Cek</span>
+			<span class="text-sky-400">Jerawat</span>
 		  </div>
 		  <nav class="space-x-6 text-sm font-medium hidden md:flex">
 			<a class="bg-pink-400 text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#">
@@ -19,7 +25,7 @@ class HeaderComponent extends HTMLElement {
 			</a>
 		  </nav>
 		</header>
-	  `
+	  `;
 	}
 }
 

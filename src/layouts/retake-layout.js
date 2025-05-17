@@ -1,7 +1,6 @@
-class ConfirmationLayout extends HTMLElement {
+class RetakeLayout extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
 	}
 
 	connectedCallback() {
@@ -9,8 +8,8 @@ class ConfirmationLayout extends HTMLElement {
 	}
 
 	render() {
-		this.shadowRoot.innerHTML = `
-	 <main class="flex-grow flex flex-col items-center px-6 text-center mt-12 max-w-xl mx-auto" >
+		this.innerHTML = `
+	   <main class="flex-grow flex flex-col items-center px-6 text-center mt-12 max-w-xl mx-auto" >
    <h2 class="text-center text-pink-400 text-lg font-bold mb-4 drop-shadow-[0_0_4px_rgba(255,182,193,0.7)]">
     Apakah Kamu Sudah Yakin dengan Gambar ini ?
    </h2>
@@ -33,4 +32,4 @@ class ConfirmationLayout extends HTMLElement {
 	}
 }	
 
-customElements.define('confirmation-layout', ConfirmationLayout)
+customElements.define('retake-layout', RetakeLayout)

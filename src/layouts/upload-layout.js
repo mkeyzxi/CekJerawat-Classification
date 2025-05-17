@@ -1,0 +1,97 @@
+class UploadLayout extends HTMLElement {
+	constructor() {
+		super();
+	}
+
+	connectedCallback() {
+		this.render();
+	}
+
+	render() {
+		this.innerHTML = `
+	   <main class="flex-grow flex flex-col items-center px-6 max-w-4xl mx-auto w-full">
+    <h2
+      class="text-center text-pink-400 text-lg font-bold mb-8 drop-shadow-[0_0_4px_rgba(255,182,193,0.7)]"
+    >
+    Mari Mulai Memprediksi Kulit  
+      <span class="text-sky-300 font-semibold">Jerawat</span>
+      <span class="text-sky-300 font-semibold">Anda</span>
+    </h2>
+
+    <section
+      class="bg-pink-400 rounded-2xl shadow-md px-8 py-10 w-full max-w-4xl relative"
+      style="box-shadow: 0 4px 6px rgba(0,0,0,0.1)"
+    >
+      <p
+        class="text-white font-semibold text-center mb-3 text-sm leading-tight"
+      >
+        Setiap wajah punya cerita, termasuk soal jerawat.
+      </p>
+      <p
+        class="text-white text-center text-xs leading-tight mb-10 max-w-[480px] mx-auto"
+      >
+        Cek
+        <span class="text-sky-300 font-semibold">Jerawat</span>
+        kami siap membantumu menemukan obat jerawat yang paling cocok untuk
+        kulitmu. Kenali jenis jerawatmu, rawat dengan tepat, dan wujudkan kulit
+        cantik, bersih, dan percaya diri setiap hari.
+      </p>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 max-w-4xl mx-auto text-white text-[9px] leading-tight"
+      >
+        <div class="flex flex-col items-center text-center px-2">
+          <div
+            class="bg-white text-pink-400 rounded-full p-4 mb-2 flex justify-center items-center"
+            style="width:48px; height:48px"
+          >
+            <i class="fas fa-female text-2xl"></i>
+          </div>
+          <p>
+            Ikat rambut ke belakang dan lepas kacamata agar wajah terlihat
+            jelas.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center px-2">
+          <div
+            class="bg-white text-pink-400 rounded-full p-4 mb-2 flex justify-center items-center"
+            style="width:48px; height:48px"
+          >
+            <i class="fas fa-mug-hot text-2xl"></i>
+          </div>
+          <p>
+            Pastikan wajah bebas dari makeup agar analisis kulit lebih akurat.
+          </p>
+        </div>
+        <div class="flex flex-col items-center text-center px-2">
+          <div
+            class="bg-white text-pink-400 rounded-full p-4 mb-2 flex justify-center items-center"
+            style="width:48px; height:48px"
+          >
+            <i class="fas fa-lightbulb text-2xl"></i>
+          </div>
+          <p>Ambil foto di tempat yang terang agar kondisi kulit mudah terdeteksi.</p>
+        </div>
+        <div class="flex flex-col items-center text-center px-2">
+          <div
+            class="bg-white text-pink-400 rounded-full p-4 mb-2 flex justify-center items-center"
+            style="width:48px; height:48px"
+          >
+            <i class="fas fa-meh text-2xl"></i>
+          </div>
+          <p>Tampilkan ekspresi wajah yang netral, tanpa senyum atau kerutan.</p>
+        </div>
+      </div>
+
+      <button onClick="alert('hellow')"
+        class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-sky-300 text-white font-semibold rounded-md px-6 py-2 text-sm"
+      >
+        Unggah &amp; Prediksi
+      </button>
+    </section>
+  </main>
+	`;
+	}
+}	
+
+customElements.define('upload-layout', UploadLayout)

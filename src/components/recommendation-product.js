@@ -1,7 +1,7 @@
-class IntroLauout extends HTMLElement {
+class RecommendationComponent extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
+		
 	}
 
 	connectedCallback() {
@@ -9,7 +9,7 @@ class IntroLauout extends HTMLElement {
 	}
 
 	render() {
-		this.shadowRoot.innerHTML = `
+		this.innerHTML = `
 	  <h3 class="text-cyan-300 font-semibold text-lg mb-6">
     Rekomendasi Produk
   </h3>
@@ -38,4 +38,4 @@ class IntroLauout extends HTMLElement {
 	}
 }	
 
-customElements.define('intro-layout', IntroLauout)
+customElements.define('recommendation-component', RecommendationComponent)

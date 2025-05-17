@@ -1,7 +1,6 @@
 class WhatforLayout extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
 	}
 
 	connectedCallback() {
@@ -9,25 +8,61 @@ class WhatforLayout extends HTMLElement {
 	}
 
 	render() {
-		this.shadowRoot.innerHTML = `
-	  <main class="flex flex-col md:flex-row items-center gap-8 md:gap-0 justify-between px-6 md:px-12 py-12 md:py-24 max-w-7xl mx-auto">
-   <div class="max-w-xl md:max-w-lg order-2 md:order-1">
-    <h1 class="text-pink-400 font-extrabold text-3xl md:text-4xl leading-tight mb-4 fade-slide-up delay-300">
-     Kenali Jerawatmu,
-     <br/>
-     Temukan Solusinya
-    </h1>
-    <p class="text-pink-300 text-sm md:text-base mb-8 max-w-md fade-slide-up delay-500">
-     Upload foto, dapatkan jenis jerawat dan rekomendasi obat totol secara cepat dan gratis.
-    </p>
-    <button class="bg-pink-400 text-white text-xs font-semibold rounded-full px-5 py-2 hover:bg-pink-500 transition fade-slide-up delay-700 w-full md:w-auto block md:inline-block text-center">
-     Mulai Sekarang
-    </button>
-   </div>
-   <div class="mt-0 md:ml-12 flex-shrink-0 float-animation order-1 md:order-2">
-    <img alt="Smiling woman with clear skin touching her face" class="w-72 md:w-96 rounded-none" height="400" src="https://storage.googleapis.com/a1aa/image/f4b34302-887e-4131-325d-f9e639bd4a86.jpg" width="400"/>
-   </div>
-  </main>`}
+		this.innerHTML = `
+	  <div class="flex-grow max-w-full bg-white rounded-b-3xl shadow-lg pb-12 px-4 justify-center items-center">
+    <div class="text-center pt-10">
+      <h2 class="text-pink-400 text-2xl sm:text-3xl md:text-4xl font-semibold">
+        Apa yang Dapat Dilakukan AI untuk Anda?
+      </h2>
+      <p class="text-pink-300 text-sm sm:text-base md:text-lg mt-2">
+        Proses Artificial Intelligence dalam mengatasi<br/>
+        permasalahan kamu:
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10">
+      <!-- Upload Foto -->
+      <div class="flex flex-col items-center">
+        <div class="bg-pink-400 rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-42 md:h-42 lg:w-52 lg:h-52 flex justify-center items-center">
+          <img alt="Upload Foto" class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-34 lg:h-34" src="https://storage.googleapis.com/a1aa/image/5b9e55fb-8b09-4afa-b158-a30270245d30.jpg"/>
+        </div>
+        <button class="mt-3 bg-sky-400 text-white text-xs sm:text-sm md:text-base font-bold rounded-md px-4 py-1 sm:px-5 sm:py-2">
+          Upload Foto
+        </button>
+      </div>
+
+      <!-- Arrow -->
+      <div class="hidden sm:flex text-pink-400 text-3xl md:text-4xl font-bold select-none">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+
+      <!-- Proses Otomatis -->
+      <div class="flex flex-col items-center">
+        <div class="bg-pink-400 rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-42 md:h-42 lg:w-52 lg:h-52 flex justify-center items-center">
+          <img alt="Proses Otomatis" class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-34 lg:h-34" src="https://storage.googleapis.com/a1aa/image/a4486b80-5cde-4ca3-b2d0-3eb5e61471af.jpg"/>
+        </div>
+        <button class="mt-3 bg-sky-400 text-white text-xs sm:text-sm md:text-base font-bold rounded-md px-4 py-1 sm:px-5 sm:py-2">
+          Proses Otomatis
+        </button>
+      </div>
+
+      <!-- Arrow -->
+      <div class="hidden sm:flex text-pink-400 text-3xl md:text-4xl font-bold select-none">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+
+      <!-- Rekomendasi Obat -->
+      <div class="flex flex-col items-center">
+        <div class="bg-pink-400 rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-42 md:h-42 lg:w-52 lg:h-52 flex justify-center items-center">
+          <img alt="Rekomendasi Obat" class="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-34 lg:h-34" src="https://storage.googleapis.com/a1aa/image/7ad5ff45-de10-44c7-72c9-519b35b50958.jpg"/>
+        </div>
+        <button class="mt-3 bg-sky-400 text-white text-xs sm:text-sm md:text-base font-bold rounded-md px-4 py-1 sm:px-5 sm:py-2">
+          Rekomendasi Obat
+        </button>
+      </div>
+    </div>
+  </div>
+    `}
 }
 
 customElements.define('whatfor-layout', WhatforLayout)

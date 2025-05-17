@@ -1,7 +1,6 @@
 class QuestionLayout extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: "open" });
 	}
 
 	connectedCallback() {
@@ -9,7 +8,7 @@ class QuestionLayout extends HTMLElement {
 	}
 
 	render() {
-		this.shadowRoot.innerHTML = `
+		this.innerHTML = `
 	 <main class="flex flex-col items-center px-4">
 		<h2 class="text-pink-400 font-bold text-lg mt-6 mb-4 text-center max-w-md ">
 			Silahkan Jawab Pertanyaan dibawah ini untuk hasil yang lebih akurat

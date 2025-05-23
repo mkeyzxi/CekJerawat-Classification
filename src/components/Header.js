@@ -19,6 +19,9 @@ class HeaderComponent extends HTMLElement {
 			<a class="text-pink-300 hover:text-pink-400 transition flex justify-center items-center" href="#">
 			  Unggah
 			</a>
+			<a class="text-pink-300 hover:text-pink-400 transition flex justify-center items-center" href="#">
+			  Testimoni
+			</a>
 			<a class="text-pink-300 hover:text-pink-400 transition flex justify-center items-center" href="#" >
 			  Tentang
 			</a>

@@ -9,7 +9,7 @@ class WhatforLayout extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-	  <div class="flex-grow max-w-full bg-white rounded-b-3xl shadow-lg pb-12 px-4 justify-center items-center">
+	  <div class="flex-grow max-w-full p-10 flex flex-col shadow-lg justify-center items-center ">
     <div class="text-center pt-10">
       <h2 class="text-pink-400 text-2xl sm:text-3xl md:text-4xl font-semibold">
         Apa yang Dapat Dilakukan AI untuk Anda?
@@ -18,9 +18,7 @@ class WhatforLayout extends HTMLElement {
         Proses Artificial Intelligence dalam mengatasi<br/>
         permasalahan kamu:
       </p>
-    </div>
-
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10">
       <!-- Upload Foto -->
       <div class="flex flex-col items-center">
         <div class="bg-pink-400 rounded-full w-24 h-24 sm:w-28 sm:h-28 md:w-42 md:h-42 lg:w-52 lg:h-52 flex justify-center items-center">
@@ -62,6 +60,9 @@ class WhatforLayout extends HTMLElement {
       </div>
     </div>
   </div>
+    </div>
+
+    
     `}
 }
 

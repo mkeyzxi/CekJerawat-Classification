@@ -9,7 +9,7 @@ class IntroLayout extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-	   <main class="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-0 md:py-24 max-w-7xl mx-auto h-[85vh]">
+	   <main class="flex flex-col md:flex-row items-center justify-evenly px-6 md:px-12 py-0 md:py-24 max-w-7xl mx-auto h-[85vh]">
     <div class="max-w-xl md:max-w-lg order-2 md:order-1">
       <h1 class="text-pink-400 font-extrabold text-3xl md:text-4xl leading-tight mb-4">
         Kenali Jerawatmu,
@@ -23,8 +23,8 @@ class IntroLayout extends HTMLElement {
         Mulai Sekarang
       </button>
     </div>
-    <div class="mt-12 md:mt-0 md:ml-12 flex-shrink-0 order-1 md:order-2">
-      <img alt="Smiling woman with clear skin touching her face" class="w-72 md:w-96 rounded-none" height="400"
+    <div class="mt-12 md:mt-0 md:ml-12 flex-shrink-0 order-1 md:order-2 ">
+      <img alt="Smiling woman with clear skin touching her face" class="w-82 md:w-106 rounded-none " height="400" 
         src="https://storage.googleapis.com/a1aa/image/f4b34302-887e-4131-325d-f9e639bd4a86.jpg" width="400" />
     </div>
   </main>

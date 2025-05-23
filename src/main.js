@@ -2,6 +2,7 @@ import './style.css'
 import './components/Header.js';
 import './components/Footer.js';
 import './components/recommendation-product.js';
+import './components/face-card.js';
 import './layouts/intro-layout.js'
 import './layouts/question-layout.js'
 import './layouts/whatfor-layout.js'

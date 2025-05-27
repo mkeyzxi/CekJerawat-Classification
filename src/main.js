@@ -1,6 +1,6 @@
 import './style.css'
-import './components/Header.js';
-import './components/Footer.js';
+import './components/header.js';
+import './components/footer.js';
 import './components/recommendation-product.js';
 import './components/face-card.js';
 import './layouts/intro-layout.js'
@@ -11,5 +11,5 @@ import './layouts/retake-layout.js'
 import './pages/about/about-page.js'
 import './pages/home/home-page.js'
 
-setupCounter(document.querySelector('#counter'))
+// setupCounter(document.querySelector('#counter'))
 // document.querySelector('#app').innerHTML = ""

@@ -9,7 +9,7 @@ class UploadLayout extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-	   <main class="flex-grow  flex flex-col items-center justify-center  px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full md:h-[81.8vh] py-10">
+	   <main class="flex-grow  flex flex-col items-center justify-center  px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full md:h-screen py-10">
   <h2 class="text-center text-[#FF90BB] text-xl sm:text-2xl font-bold mb-8 drop-shadow-[0_0_4px_rgba(255,182,193,0.7)]">
     Mari Mulai Memprediksi Kulit  
     <span class="text-[#8ACCD5] font-semibold">Jerawat</span>

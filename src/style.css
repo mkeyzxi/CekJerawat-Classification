@@ -9,3 +9,30 @@
   --color-border: rgba(0, 0, 0, 0.25);
   --color-button: #8ACCD5;
 }
+
+/* humburger menu sidebar */
+.menu-humburger span {
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-humburger span:first-child {
+  transform: rotate(-45deg) translateY(6px) translateX(-7px);
+  width: 100%;
+}
+
+ .menu-humburger span:nth-child(2), 
+ .menu-humburger span:nth-child(3) {
+  opacity: 0;
+}
+
+.menu-humburger span:last-child {
+  transform: rotate(45deg) translateY(-6px) translateX(-7px);
+  width: 100%;
+}
+
+/* header */
+#header {
+	transition: top 0.3s ease-in-out;
+	position: fixed;
+	width: 100%;
+}

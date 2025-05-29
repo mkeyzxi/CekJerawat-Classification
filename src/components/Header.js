@@ -1,4 +1,6 @@
 // components/HeaderComponent.js
+
+
 class HeaderComponent extends HTMLElement {
 
 
@@ -8,60 +10,33 @@ class HeaderComponent extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-		<header class="flex justify-between items-center px-6 md:px-12 py-6">
+		<header class="flex justify-between items-center px-6 md:px-12 py-3 relative z-20">
 		  <div class="text-2xl font-bold">
-			<span class="text-pink-400">Cek</span><span class="text-sky-400">Jerawat</span>
+			<span class="text-[#FF90BB]">Cek</span><span class="text-[#8ACCD5]">Jerawat</span>
 		  </div>
 		  <nav class="space-x-6 text-sm font-medium hidden md:flex">
-			<a class="bg-pink-400 text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#">
+			<a class="bg-[#FF90BB] text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#">
 			  Beranda
 			</a>
-			<a class="text-pink-300 hover:text-pink-400 transition flex justify-center items-center" href="#">
+			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#">
 			  Unggah
 			</a>
-			<a class="text-pink-300 hover:text-pink-400 transition flex justify-center items-center" href="#">
+			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#">
 			  Testimoni
 			</a>
-			<a class="text-pink-300 hover:text-pink-400 transition flex justify-center items-center" href="#" >
+			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#" >
 			  Tentang
 			</a>
 		  </nav>
-		  <nav id="mobile-nav" class="flex items-center justify-between px-4 py-2 blur-10 backdrop-blur bg-white/30 shadow-md md:hidden fixed bottom-0 inset-x-0">
-	<ul class="flex flex-row justify-around items-center space-x-6 w-full  ">
+		  <nav id="mobile-nav" class="flex items-center justify-between px-4 py-2 blur-6 backdrop-blur bg-white/30 shadow-md md:hidden fixed bottom-0 inset-x-0">
+	<ul class="flex flex-row justify-around items-center space-x-6 w-full ">
 		
 		<li>
 			<a href="#">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
-						class="w-full rounded-sm py-1 px-2 bg-[#08a04a] text-white flex justify-center items-center">
-						<svg class="w-6 h-4 flex-shrink-0 fill-white"viewBox="0 0 32 32"
-							enable-background="new 0 0 32 32" id="Stock_cut" version="1.1"
-							xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
-							<g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-							<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-
-							<g id="SVGRepo_iconCarrier">
-								<desc />
-								<g>
-									<path
-										d="M17,5H5 C3.895,5,3,5.895,3,7v22c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V18"
-										fill="none" stroke="#ffffff" stroke-linejoin="round"
-										stroke-miterlimit="10" stroke-width="2" />
-									<path d="M9,14H3v8h6 c2.209,0,4-1.791,4-4v0C13,15.791,11.209,14,9,14z"
-										fill="none" stroke="#ffffff" stroke-linejoin="round"
-										stroke-miterlimit="10" stroke-width="2" />
-									<circle cx="9" cy="18" r="1" />
-									<line fill="none" stroke="#ffffff" stroke-linejoin="round"
-										stroke-miterlimit="10" stroke-width="2" x1="25"
-										x2="25" y1="16" y2="1" />
-									<polyline fill="none" points="31,7 25,1 19,7 " stroke="#ffffff"
-										stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-								</g>
-							</g>
-
-						</svg>
+						class="w-full rounded-sm py-1 px-2 bg-[#3D365C] text-white flex justify-center items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h3.692v-5.884h4.616V19H18v-9l-6-4.538L6 10zm-1 1V9.5l7-5.288L19 9.5V20h-5.692v-5.884h-2.616V20zm7-7.77"/></svg>
 					</div>
 					<span>Beranda</span>
 				</div>
@@ -71,16 +46,8 @@ class HeaderComponent extends HTMLElement {
 			<a href="#">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
-						class="w-full rounded-sm py-1 px-2 bg-[#0a3c87] text-white flex justify-center items-center">
-						<svg class="fill-white flex-shrink-0 w-6 h-4 text-white transition duration-75 group-hover:text-white dark:text-white dark:group-hover:text-white"
-						viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M755.2 938.666667H290.133333C224 938.666667 170.666667 885.333333 170.666667 819.2V204.8C170.666667 138.666667 224 85.333333 290.133333 85.333333h270.933334c10.666667 0 21.333333 4.266667 29.866666 12.8l270.933334 268.8c8.533333 8.533333 12.8 19.2 12.8 29.866667v422.4c0 66.133333-53.333333 119.466667-119.466667 119.466667zM290.133333 170.666667c-19.2 0-34.133333 14.933333-34.133333 34.133333v614.4c0 19.2 14.933333 34.133333 34.133333 34.133333h465.066667c19.2 0 34.133333-14.933333 34.133333-34.133333v-405.333333L544 170.666667H290.133333z" />
-						<path
-							d="M810.666667 448H554.666667c-23.466667 0-42.666667-19.2-42.666667-42.666667V149.333333c0-23.466667 19.2-42.666667 42.666667-42.666666s42.666667 19.2 42.666666 42.666666v213.333334h213.333334c23.466667 0 42.666667 19.2 42.666666 42.666666s-19.2 42.666667-42.666666 42.666667zM618.666667 682.666667H405.333333c-23.466667 0-42.666667-19.2-42.666666-42.666667s19.2-42.666667 42.666666-42.666667h213.333334c23.466667 0 42.666667 19.2 42.666666 42.666667s-19.2 42.666667-42.666666 42.666667z" />
-						<path
-							d="M512 789.333333c-23.466667 0-42.666667-19.2-42.666667-42.666666V533.333333c0-23.466667 19.2-42.666667 42.666667-42.666666s42.666667 19.2 42.666667 42.666666v213.333334c0 23.466667-19.2 42.666667-42.666667 42.666666z" />
-					</svg>
+						class="w-full rounded-sm py-1 px-2 bg-[#7C4585] text-white flex justify-center items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#f1ebeb" d="M11.5 15.577v-8.65l-2.33 2.33l-.708-.718L12 5l3.539 3.539l-.708.719L12.5 6.927v8.65zM6.616 19q-.691 0-1.153-.462T5 17.384v-2.423h1v2.423q0 .231.192.424t.423.192h10.77q.23 0 .423-.192t.192-.424v-2.423h1v2.423q0 .691-.462 1.153T17.384 19z" stroke-width="0.5" stroke="#f1ebeb"/></svg>
 					</div>
 					<span>Unggah </span>
 				</div>
@@ -90,14 +57,8 @@ class HeaderComponent extends HTMLElement {
 			<a href="#">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
-						class="w-full rounded-sm py-1 px-2 bg-[#7b0c0c] text-white flex justify-center items-center">
-						<svg class="fill-white flex-shrink-0 w-6 h-4 text-white transition duration-75 group-hover:text-white dark:text-white dark:group-hover:text-white"
-							viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M512 0C229.888 0 0 229.888 0 512s229.888 512 512 512 512-229.888 512-512S794.112 0 512 0z m442.368 512c0 243.712-198.144 442.368-442.368 442.368-243.712 0-442.368-198.144-442.368-442.368 0-243.712 198.144-442.368 442.368-442.368 243.712 0 442.368 198.656 442.368 442.368z" />
-							<path
-								d="M546.816 498.176V232.96c0-19.456-15.872-34.816-34.816-34.816-19.456 0-34.816 15.872-34.816 34.816v280.064c0 9.216 3.584 17.92 10.24 24.576l130.56 130.048c6.656 6.656 15.36 10.24 24.576 10.24 9.216 0 17.92-3.584 24.576-10.24 6.656-6.656 10.24-15.36 10.24-24.576 0-9.216-3.584-17.92-10.24-24.576l-120.32-120.32z" />
-						</svg>
+						class="w-full rounded-sm py-1 px-2 bg-[#C95792] text-white flex justify-center items-center">
+						<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 56 56"><path fill="#f1ebeb" d="M28 27.66c3.485 0 6.326-3.105 6.326-6.883c0-3.735-2.826-6.693-6.326-6.693c-3.47 0-6.326 3.002-6.326 6.722c.014 3.764 2.855 6.853 6.326 6.853m-16.87.322c3.016 0 5.491-2.71 5.491-6.034c0-3.25-2.445-5.872-5.491-5.872c-3.017 0-5.507 2.665-5.492 5.901c.015 3.31 2.475 6.005 5.492 6.005m33.755 0c3.002 0 5.477-2.695 5.477-6.005c.015-3.236-2.475-5.901-5.477-5.901c-3.06 0-5.506 2.621-5.506 5.872c0 3.324 2.475 6.034 5.506 6.034M28 25.448c-2.138 0-3.969-2.05-3.969-4.642c0-2.548 1.802-4.51 3.97-4.51c2.181 0 3.968 1.933 3.968 4.48c0 2.593-1.802 4.672-3.969 4.672m-16.87.352c-1.787 0-3.31-1.714-3.31-3.823c0-2.064 1.508-3.72 3.31-3.72c1.845 0 3.324 1.626 3.324 3.691c0 2.138-1.523 3.852-3.324 3.852m33.755 0c-1.816 0-3.339-1.714-3.339-3.852c0-2.065 1.479-3.69 3.339-3.69c1.801 0 3.295 1.655 3.295 3.72c0 2.108-1.509 3.822-3.295 3.822M2.987 41.41h11.496c-.703-.395-1.245-1.274-1.142-2.167H2.621c-.293 0-.439-.117-.439-.395c0-3.632 4.144-7.03 8.933-7.03c1.845 0 3.5.44 4.92 1.274a7.6 7.6 0 0 1 1.655-1.552c-1.889-1.245-4.159-1.889-6.575-1.889C4.979 29.651 0 34.103 0 38.98c0 1.625.996 2.43 2.987 2.43m50.04 0c1.977 0 2.973-.805 2.973-2.43c0-4.877-4.98-9.329-11.115-9.329c-2.416 0-4.672.644-6.575 1.89c.659.453 1.2.966 1.67 1.551c1.405-.834 3.074-1.274 4.905-1.274c4.789 0 8.933 3.398 8.933 7.03c0 .278-.132.395-.425.395h-10.72c.088.893-.439 1.772-1.142 2.167Zm-34.224 0h18.394c2.43 0 3.588-.732 3.588-2.343c0-3.837-4.848-9.387-12.785-9.387c-7.952 0-12.8 5.55-12.8 9.387c0 1.611 1.158 2.343 3.603 2.343M18.1 39.2c-.38 0-.541-.103-.541-.41c0-2.403 3.72-6.898 10.441-6.898c6.707 0 10.427 4.495 10.427 6.897c0 .308-.147.41-.527.41Z" stroke-width="1.5" stroke="#f1ebeb"/></svg>
 					</div>
 					<span>Testimoni </span>
 				</div>
@@ -107,36 +68,8 @@ class HeaderComponent extends HTMLElement {
 			<a href="#">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
-						class="w-full rounded-sm py-1 px-2 bg-[#d5e524e4] text-white flex justify-center items-center">
-						<svg class="fill-white flex-shrink-0 w-6 h-4 text-white transition duration-75 group-hover:text-white dark:text-white dark:group-hover:text-white"
-							xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-							viewBox="0 0 32 32" data-name="Layer 13" id="Layer_13">
-							<g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-							<g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-								stroke-linejoin="round" />
-
-							<g id="SVGRepo_iconCarrier">
-
-								<title />
-
-								<path
-									d="M28.55,6.57H26.42V4.93a0.5,0.5,0,1,0-1,0V6.57H19.81V5.06a0.5,0.5,0,0,0-1,0V6.57H13.19V5.06a0.5,0.5,0,0,0-1,0V6.57H6.58V5.06a0.5,0.5,0,1,0-1,0V6.57H3.45A2,2,0,0,0,1.5,8.52v17.1a2,2,0,0,0,1.95,2h25.1a2,2,0,0,0,1.95-2V8.52A2,2,0,0,0,28.55,6.57Zm-25.1,1H5.58V9.08a0.5,0.5,0,0,0,1,0V7.57h5.61V9.08a0.5,0.5,0,0,0,1,0V7.57h5.61V9.08a0.5,0.5,0,0,0,1,0V7.57h5.61V8.94a0.5,0.5,0,1,0,1,0V7.57h2.13a1,1,0,0,1,.95.95v2.94H2.5V8.52A1,1,0,0,1,3.45,7.57Zm25.1,19H3.45a1,1,0,0,1-.95-1V12.46h27V25.62A1,1,0,0,1,28.55,26.57Z" />
-								<rect height="2.13" width="2.13" x="9.99" y="14.39" />
-								<rect height="2.13" width="2.13" x="14.98" y="14.39" />
-								<rect height="2.13" width="2.13" x="19.98" y="14.37" />
-								<rect height="2.13" width="2.13" x="5" y="18.45" />
-								<rect height="2.13" width="2.13" x="9.99" y="18.45" />
-								<rect height="2.13" width="2.13" x="14.98" y="18.45" />
-								<rect height="2.13" width="2.13" x="5" y="22.56" />
-								<rect height="2.13" width="2.13" x="9.99" y="22.56" />
-								<rect height="2.13" width="2.13" x="14.98" y="22.55" />
-								<rect height="2.13" width="2.13" x="19.98" y="22.55" />
-								<rect height="2.13" width="2.13" x="19.98" y="18.44" />
-								<rect height="2.13" width="2.13" x="24.87" y="14.36" />
-								<rect height="2.13" width="2.13" x="24.87" y="18.42" />
-							</g>
-						</svg>
+						class="w-full rounded-sm py-1 px-2 bg-[#F8B55F] text-white flex justify-center items-center">
+						<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg>
 					</div>
 					<span>Tentang</span>
 				</div>

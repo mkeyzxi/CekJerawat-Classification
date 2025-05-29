@@ -10,7 +10,7 @@ class IntroLayout extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-	  <main class="flex flex-col-reverse md:flex-row items-center md:justify-between justify-end pt-10 md:pt-0 px-6 md:px-12 h-screen gap-5 md:gap-10 max-w-7xl mx-auto">
+	  <main class="flex flex-col-reverse md:flex-row items-center md:justify-between justify-center pt-10 md:pt-0 px-6 md:px-12 h-screen gap-10  max-w-7xl mx-auto">
   
   <div class="max-w-xl text-center md:text-left">
     <h1 class="text-[#FF90BB] font-extrabold text-3xl md:text-5xl leading-tight mb-4">

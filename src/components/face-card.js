@@ -17,4 +17,6 @@ class Facecard extends HTMLElement {
 	}
 }	
 
-customElements.define('face-card', Facecard)
+customElements.define('face-card', Facecard);
+
+// masih berfikir tidak berguna ni component

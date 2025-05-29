@@ -1,19 +1,38 @@
 // components/HeaderComponent.js
 
-
 class HeaderComponent extends HTMLElement {
-
+	#header;
+	#menuButton;
+	#mobileNav;
 
 	connectedCallback() {
 		this.render();
+		this.#header = document.getElementById('header');
+		this.#menuButton = this.querySelector('#menu-humburger');
+		this.#mobileNav = this.querySelector('#mobile-nav');
+		this.menuToggle();
+		this.onScroll();
 	}
 
 	render() {
 		this.innerHTML = `
-		<header class="flex justify-between items-center px-6 md:px-12 py-3 relative z-20">
-		  <div class="text-2xl font-bold">
-			<span class="text-[#FF90BB]">Cek</span><span class="text-[#8ACCD5]">Jerawat</span>
+		<header id="header" class="flex justify-between items-center px-7 md:px-12 py-3 relative z-20 bg-white">
+	
+		  <div class="text-2xl font-bold flex">
+			<div class="text-[#FF90BB]">Cek</div><div class="text-[#8ACCD5]">Jerawat</div>
 		  </div>
+		  	<div class="flex gap-4">
+		
+		  	<button id="menu-humburger" class="md:hidden w-8 flex flex-col justify-center items-center gap-[4px] group ">
+				<span
+					class="block w-[70%] h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
+				<span
+					class="block w-full h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
+				<span
+					class="block w-full h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
+				<span
+					class="block w-[70%] h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
+			</button></div>
 		  <nav class="space-x-6 text-sm font-medium hidden md:flex">
 			<a class="bg-[#FF90BB] text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#">
 			  Beranda
@@ -27,8 +46,9 @@ class HeaderComponent extends HTMLElement {
 			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#" >
 			  Tentang
 			</a>
+			
 		  </nav>
-		  <nav id="mobile-nav" class="flex items-center justify-between px-4 py-2 blur-6 backdrop-blur bg-white/30 shadow-md md:hidden fixed bottom-0 inset-x-0">
+		  <nav id="mobile-nav" class="flex bg-white/30 items-center justify-between px-4 py-2 blur-6 backdrop-blur  shadow-md md:hidden fixed bottom-0 inset-x-0 text-gray-800">
 	<ul class="flex flex-row justify-around items-center space-x-6 w-full ">
 		
 		<li>
@@ -71,7 +91,7 @@ class HeaderComponent extends HTMLElement {
 						class="w-full rounded-sm py-1 px-2 bg-[#F8B55F] text-white flex justify-center items-center">
 						<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg>
 					</div>
-					<span>Tentang</span>
+					<span class="">Tentang</span>
 				</div>
 			</a>
 		</li>
@@ -82,9 +102,46 @@ class HeaderComponent extends HTMLElement {
 		</header>
 	  `;
 	}
+
+	menuToggle() {
+		
+		
+		// const mobileUl = this.querySelector('#mobile-nav');
+
+		this.#menuButton.addEventListener('click', () => {
+			this.#mobileNav.classList.toggle('hidden');
+			this.#mobileNav.classList.toggle('flex');
+			this.classList.toggle('menu-humburger');
+			// console.log(this.#mobileNav);
+			// console.log('Menu toggled');
+		});
+	}
+
+	onScroll() {
+	let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+	document.addEventListener('scroll', () => {
+		let currentScrollPosition = window.pageYOffset;
+
+		if (previousScrollPosition > currentScrollPosition) {
+			this.#header.style.top = "0";
+			// this.#header.classList.add('bg-white/30');
+			
+		} else {
+			this.#header.style.top = "-75px";
+			// this.#header.classList.remove('bg-white/30');
+			
+		}
+
+		previousScrollPosition = currentScrollPosition;
+	});
+}
+
 }
 
 customElements.define('header-component', HeaderComponent);
 
 
-
+	// <button class="md:hidden w-8 h-8 flex justify-center items-center text-gray-700 hover:text-[#FF90BB] transition duration-300">
+			// 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="#000" d="M232.13 143.64a6 6 0 0 0-6-1.49a90.07 90.07 0 0 1-112.27-112.3a6 6 0 0 0-7.49-7.48a102.88 102.88 0 0 0-51.89 36.31a102 102 0 0 0 142.84 142.84a102.88 102.88 0 0 0 36.31-51.89a6 6 0 0 0-1.5-5.99m-42 48.29a90 90 0 0 1-126-126a90.9 90.9 0 0 1 35.52-28.27a102.06 102.06 0 0 0 118.69 118.69a90.9 90.9 0 0 1-28.24 35.58Z"/></svg>
+			// </button>

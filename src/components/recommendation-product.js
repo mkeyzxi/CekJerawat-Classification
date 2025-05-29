@@ -39,4 +39,4 @@ class RecommendationComponent extends HTMLElement {
 	}
 }	
 
-customElements.define('recommendation-component', RecommendationComponent)
+customElements.define('recommendation-component', RecommendationComponent);

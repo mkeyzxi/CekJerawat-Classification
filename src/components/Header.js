@@ -34,16 +34,16 @@ class HeaderComponent extends HTMLElement {
 					class="block w-[70%] h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
 			</button></div>
 		  <nav class="space-x-6 text-sm font-medium hidden md:flex">
-			<a class="bg-[#FF90BB] text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#">
+			<a class="bg-[#FF90BB] text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#/">
 			  Beranda
 			</a>
-			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#">
+			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/unggah">
 			  Unggah
 			</a>
 			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#">
 			  Testimoni
 			</a>
-			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#" >
+			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/tentang" >
 			  Tentang
 			</a>
 			
@@ -52,7 +52,7 @@ class HeaderComponent extends HTMLElement {
 	<ul class="flex flex-row justify-around items-center space-x-6 w-full ">
 		
 		<li>
-			<a href="#">
+			<a href="#/">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
 						class="w-full rounded-sm py-1 px-2 bg-[#3D365C] text-white flex justify-center items-center">
@@ -63,7 +63,7 @@ class HeaderComponent extends HTMLElement {
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="#/unggah">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
 						class="w-full rounded-sm py-1 px-2 bg-[#7C4585] text-white flex justify-center items-center">
@@ -85,7 +85,7 @@ class HeaderComponent extends HTMLElement {
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="#/tentang">
 				<div class="w-[40px] flex justify-start items-center flex-col text-center text-xs/4">
 					<div
 						class="w-full rounded-sm py-1 px-2 bg-[#F8B55F] text-white flex justify-center items-center">

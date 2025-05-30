@@ -1,19 +1,12 @@
-import '../../layouts/intro-layout.js'
-import '../../layouts/whatfor-layout.js'
+// src/pages/home/home-page.js
+import '../../layouts/intro-layout.js';
+import '../../layouts/whatfor-layout.js';
 
-class HomePage extends HTMLElement {
-	constructor() {
-		super();
-	}
-
-	connectedCallback() {
-		this.render();
-	}
-
+export default class HomePage {
 	render() {
-		this.innerHTML = `
-	  <intro-layout></intro-layout>
-    <whatfor-layout></whatfor-layout>`}
+		return `
+      <intro-layout></intro-layout>
+      <whatfor-layout></whatfor-layout>
+    `;
+	}
 }
-
-customElements.define('home-page', HomePage)

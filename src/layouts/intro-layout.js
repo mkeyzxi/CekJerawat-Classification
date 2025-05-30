@@ -26,13 +26,21 @@ class IntroLayout extends HTMLElement {
   </div>
 
  
-  <div class="w-full max-w-xs lg:max-w-md flex-shrink-0">
+  <div class=" w-full max-w-xs lg:max-w-md flex-shrink-0">
     <img 
-      src="https://storage.googleapis.com/a1aa/image/f4b34302-887e-4131-325d-f9e639bd4a86.jpg" 
+      src="/images/profil-kecantikan.jpg" 
       alt="Smiling woman with clear skin touching her face" 
-      class="w-full h-auto object-cover rounded-lg shadow-lg"
+      class="w-full h-auto object-cover rounded-lg shadow-lg lg:hidden"
+    />
+     <img 
+      src="/images/profil-kecantikan-lg.png" 
+      width="465px"
+      height="595px"
+      alt="Smiling woman with clear skin touching her face" 
+      class=" h-auto object-cover hidden lg:block absolute bottom-0 right-0"
     />
   </div>
+   
 </main>
 
 	`;

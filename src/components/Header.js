@@ -46,6 +46,9 @@ class HeaderComponent extends HTMLElement {
 			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/tentang" >
 			  Tentang
 			</a>
+			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/faq" >
+			  FAQ
+			</a>
 			
 		  </nav>
 		  <nav id="mobile-nav" class="flex bg-white/30 items-center justify-between px-4 py-2 blur-6 backdrop-blur  shadow-md md:hidden fixed bottom-0 inset-x-0 text-gray-800">

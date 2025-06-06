@@ -17,5 +17,5 @@ import { renderPage } from './routes/utils.js';
 window.addEventListener('hashchange', renderPage);
 window.addEventListener('DOMContentLoaded', renderPage);
 
-setupCounter(document.querySelector('#counter'))
+// setupCounter(document.querySelector('#counter'))
 document.querySelector('#app').innerHTML = ""

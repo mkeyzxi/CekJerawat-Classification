@@ -5,6 +5,7 @@ import AboutPage from '../pages/about/about-page.js';
 import UploadLayout from '../layouts/upload-layout.js';
 import '../pages/about/about-page.js';
 import FaqPage from '../pages/faq/faq-page.js';
+import TestimoniPage from '../pages/testimoni/testimoni-page.js';
 // import '../layouts/upload-layout.js';
 // C:\belajarku\Semester 6\DBS Foundation FEBE\acne-clasification-app\src\layouts\upload-layout.js
 export const routes = {
@@ -13,6 +14,7 @@ export const routes = {
 	'/unggah': () => new UploadLayout(),
 	// '/unggah': () => `<upload-layout></upload-layout>`,
 	// '/testimoni': () => new ,
+	'/testimoni': () => new TestimoniPage(),
 	'/tentang': () => new AboutPage(),
 	'/faq': () => new FaqPage(),
 	// '/tentang': () => `<about-page></about-page>`,

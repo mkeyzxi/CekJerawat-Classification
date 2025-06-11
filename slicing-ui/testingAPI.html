@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Endpoint /terima</title>
+</head>
+<body>
+  <h2>Form Diagnosa Kulit</h2>
+  <form id="diagnosaForm" enctype="multipart/form-data">
+    <label>Upload Gambar:
+      <input type="file" name="file" required>
+    </label><br><br>
+
+    <label>Komedo Hitam:
+      <select name="komedo_hitam">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Titik Putih:
+      <select name="titik_putih">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Berisi Nanah:
+      <select name="berisi_nanah">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Benjolan Merah:
+      <select name="benjolan_merah">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Benjolan Besar:
+      <select name="benjolan_besar">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Nyeri:
+      <select name="nyeri">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Merah:
+      <select name="merah">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Menyatu:
+      <select name="menyatu">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br>
+
+    <label>Tekstur Keras:
+      <select name="tekstur_keras">
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </label><br><br>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <pre id="result"></pre>
+
+  <script>
+    document.getElementById('diagnosaForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('http://103.151.145.180:3000/terima', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+        document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+      } catch (error) {
+        document.getElementById('result').textContent = 'Terjadi kesalahan: ' + error.message;
+      }
+    });
+  </script>
+</body>
+</html>

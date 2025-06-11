@@ -1,101 +1,234 @@
-class QuestionLayout extends HTMLElement {
-	constructor() {
-		super();
-	}
+// import { postData } from '../model/ApiModel.js';
 
-	connectedCallback() {
-		this.render();
-	}
+// export default class QuestionLayoutList {
+//   render() {
+//     return `
+//       <main class="flex flex-col items-center px-4">
+//         <h2 class="text-pink-400 font-bold text-lg mt-6 mb-4 text-center max-w-md">
+//           Silahkan Jawab Pertanyaan dibawah ini untuk hasil yang lebih akurat
+//         </h2>
 
-	render() {
-		this.innerHTML = `
-	 <main class="flex flex-col items-center px-4">
-		<h2 class="text-pink-400 font-bold text-lg mt-6 mb-4 text-center max-w-md ">
-			Silahkan Jawab Pertanyaan dibawah ini untuk hasil yang lebih akurat
-		</h2>
+//         <form id="acneForm" class="relative bg-pink-300 shadow-customBox rounded-3xl pt-14 pb-12 px-12 max-w-3xl w-full mx-auto sm:px-6 mt-10">
+//           <p class="text-white font-semibold text-sm mb-6 text-center max-w-xl mx-auto">
+//             Jawablah pertanyaan berikut dengan jujur
+//           </p>
 
-		<div class="relative bg-pink-300 shadow-customBox rounded-3xl pt-14 pb-12 px-12 max-w-3xl w-full mx-auto sm:px-6 mt-10"
-			role="form" aria-labelledby="question-label">
-			<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10" role="list"
-				aria-label="Steps">
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-pink-300 text-white"
-					aria-current="step" tabindex="0">
-					1
-				</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">
-					2
-				</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">3</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">4</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">5</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">6</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">7</div>
-				<div class="w-7 h-7 rounded-full shadow text-xs font-semibold flex items-center justify-center cursor-pointer bg-white text-pink-300"
-					tabindex="0">8</div>
-			</div>
+//           <div class="space-y-6 text-white text-sm">
+//             ${this.createQuestion("komedo_hitam", "1. Apakah terlihat komedo hitam di permukaan kulit?")}
+//             ${this.createQuestion("titik_putih", "2. Apakah terdapat titik putih kecil?")}
+//             ${this.createQuestion("berisi_nanah", "3. Apakah jerawat berisi nanah?")}
+//             ${this.createQuestion("benjolan_merah", "4. Apakah muncul benjolan merah tanpa nanah?")}
+//             ${this.createQuestion("benjolan_besar", "5. Apakah benjolan cukup besar atau dalam?")}
+//             ${this.createQuestion("nyeri", "6. Apakah terasa nyeri saat disentuh?")}
+//             ${this.createQuestion("merah", "7. Apakah area sekitar jerawat terlihat kemerahan?")}
+//             ${this.createQuestion("menyatu", "8. Apakah jerawat menyatu membentuk area luas?")}
+//             ${this.createQuestion("tekstur_keras", "9. Apakah tekstur jerawat terasa keras saat disentuh?")}
+//           </div>
 
-			<p id="question-label" class="text-white font-semibold text-sm mb-1 text-center max-w-xl mx-auto">
-				Warna jerawat apa yang paling sering Anda lihat di kulit Anda ?
-			</p>
-			<p class="text-white text-xs mb-6 text-center max-w-xl mx-auto">
-				(bisa pilih lebih dari satu)
-			</p>
+//           <button type="submit"
+//             class="bg-[#7bc1cc] hover:bg-[#6aa9b4] text-white font-bold rounded-xl py-3 px-12 mt-10 block mx-auto text-base"
+//           >
+//             Kirim
+//           </button>
+//         </form>
+//       </main>
+//     `;
+//   }
 
-			<div class="grid grid-cols-3 gap-6 text-pink-400 text-xs font-normal max-w-3xl mx-auto sm:grid-cols-2 sm:gap-4"
-				role="group" aria-label="Options for acne colors">
-				<label
-					class="bg-white text-pink-400 rounded-full px-6 py-2 text-center hover:bg-pink-200 border-2 border-transparent transition cursor-pointer flex items-center justify-center">
-					<input type="checkbox" name="acne_type" value="hitam" class="hidden peer" />
-					<span class="peer-checked:font-semibold peer-checked:text-pink-600">Hitam di tengah</span>
-				</label>
+//   createQuestion(name, label) {
+//     return `
+//       <div>
+//         <p class="mb-2">${label}</p>
+//         <div class="flex gap-6">
+//           <label class="flex items-center gap-2">
+//             <input type="radio" name="${name}" value="ya" required />
+//             Ya
+//           </label>
+//           <label class="flex items-center gap-2">
+//             <input type="radio" name="${name}" value="tidak" />
+//             Tidak
+//           </label>
+//         </div>
+//       </div>
+//     `;
+//   }
 
-				<label
-					class="bg-white text-pink-400 rounded-full px-6 py-2 text-center hover:bg-pink-200 border-2 border-transparent transition cursor-pointer flex items-center justify-center">
-					<input type="checkbox" name="acne_type" value="putih" class="hidden peer" />
-					<span class="peer-checked:font-semibold peer-checked:text-pink-600">Putih di Tengah</span>
-				</label>
+//   initEvent() {
+//     const form = document.getElementById("acneForm");
 
-				<label
-					class="bg-white text-pink-400 rounded-full px-6 py-2 text-center hover:bg-pink-200 border-2 border-transparent transition cursor-pointer flex items-center justify-center leading-tight">
-					<input type="checkbox" name="acne_type" value="merah_tanpa_nanah" class="hidden peer" />
-					<span class="peer-checked:font-semibold peer-checked:text-pink-600">Merah tanpa<br />Nanah</span>
-				</label>
+//     if (!form) return;
 
-				<label
-					class="bg-white text-pink-400 rounded-full px-6 py-2 text-center hover:bg-pink-200 border-2 border-transparent transition cursor-pointer flex items-center justify-center leading-tight">
-					<input type="checkbox" name="acne_type" value="merah_putih" class="hidden peer" />
-					<span class="peer-checked:font-semibold peer-checked:text-pink-600">Merah dengan titik<br />putih di
-						atas</span>
-				</label>
+//     form.addEventListener("submit", async function (event) {
+//       event.preventDefault();
+//       const formData = new FormData(form);
+//       const pertanyaan = {};
 
-				<label
-					class="bg-white text-pink-400 rounded-full px-6 py-2 text-center hover:bg-pink-200 border-2 border-transparent transition cursor-pointer flex items-center justify-center leading-tight">
-					<input type="checkbox" name="acne_type" value="merah_bengkak" class="hidden peer" />
-					<span class="peer-checked:font-semibold peer-checked:text-pink-600">Merah kebiruan,<br />membengkak
-						besar</span>
-				</label>
+//       formData.forEach((value, key) => {
+//         pertanyaan[key] = value;
+//       });
 
-				<label
-					class="bg-white text-pink-400 rounded-full px-6 py-2 text-center hover:bg-pink-200 border-2 border-transparent transition cursor-pointer flex items-center justify-center leading-tight">
-					<input type="checkbox" name="acne_type" value="menonjol" class="hidden peer" />
-					<span class="peer-checked:font-semibold peer-checked:text-pink-600">Kulit hanya<br />menonjol
-						tanpa<br />warna jelas</span>
-				</label>
-			</div>
+//       const dummyImage = "base64-atau-url-placeholder";
 
-			<button
-				class="bg-[#7bc1cc] hover:bg-[#6aa9b4] text-white font-bold rounded-xl py-3 px-12 mt-10 block mx-auto text-base"
-				type="button" aria-label="Next step">
-				Selanjutnya
-			</button>
-		</div>
-	</main>`}
+//       try {
+//         const result = await postData(dummyImage, pertanyaan);
+//         alert("Data berhasil dikirim!");
+//         console.log(result);
+//       } catch (error) {
+//         alert("Gagal mengirim data.");
+//         console.error(error);
+//       }
+//     });
+//   }
+// }
+
+
+// layouts/question-list.js
+// import { postData } from '../model/ApiModel.js';
+
+// export default class QuestionLayoutList {
+//   constructor(imgBase64) {
+//     this.imgBase64 = imgBase64;
+//   }
+
+//   render() {
+//     const wrapper = document.createElement('main');
+//     wrapper.className = 'flex flex-col items-center px-4';
+
+//     wrapper.innerHTML = `
+//       <h2 class="text-pink-400 font-bold text-lg mt-6 mb-4 text-center max-w-md">
+//         Silahkan Jawab Pertanyaan dibawah ini untuk hasil yang lebih akurat
+//       </h2>
+
+//       <form id="acneForm" class="bg-pink-300 shadow-customBox rounded-3xl pt-14 pb-12 px-6 max-w-3xl w-full mx-auto mt-10">
+//         <p class="text-white font-semibold text-sm mb-6 text-center max-w-xl mx-auto">
+//           Jawablah pertanyaan berikut dengan jujur
+//         </p>
+
+//         <div class="space-y-6 text-white text-sm">
+//           ${this.renderQuestions()}
+//         </div>
+
+//         <button type="submit"
+//           class="bg-[#7bc1cc] hover:bg-[#6aa9b4] text-white font-bold rounded-xl py-3 px-12 mt-10 block mx-auto text-base"
+//         >
+//           Kirim
+//         </button>
+//       </form>
+//     `;
+
+//     this.initEvent(wrapper);
+
+//     return wrapper;
+//   }
+
+//   renderQuestions() {
+//     const questions = [
+//       { name: "komedo_hitam", text: "1. Apakah terlihat komedo hitam di permukaan kulit?" },
+//       { name: "titik_putih", text: "2. Apakah terdapat titik putih kecil?" },
+//       { name: "berisi_nanah", text: "3. Apakah jerawat berisi nanah?" },
+//       { name: "benjolan_merah", text: "4. Apakah muncul benjolan merah tanpa nanah?" },
+//       { name: "benjolan_besar", text: "5. Apakah benjolan cukup besar atau dalam?" },
+//       { name: "nyeri", text: "6. Apakah terasa nyeri saat disentuh?" },
+//       { name: "merah", text: "7. Apakah area sekitar jerawat terlihat kemerahan?" },
+//       { name: "menyatu", text: "8. Apakah jerawat menyatu membentuk area luas?" },
+//       { name: "tekstur_keras", text: "9. Apakah tekstur jerawat terasa keras saat disentuh?" },
+//     ];
+
+//     return questions.map(q => `
+//       <div>
+//         <p class="mb-2">${q.text}</p>
+//         <div class="flex gap-6">
+//           <label class="flex items-center gap-2">
+//             <input type="radio" name="${q.name}" value="ya" required />
+//             Ya
+//           </label>
+//           <label class="flex items-center gap-2">
+//             <input type="radio" name="${q.name}" value="tidak" />
+//             Tidak
+//           </label>
+//         </div>
+//       </div>
+//     `).join('');
+//   }
+
+//   initEvent(wrapper) {
+//     const form = wrapper.querySelector("#acneForm");
+
+//     form.addEventListener("submit", async (e) => {
+//       e.preventDefault();
+//       const formData = new FormData(form);
+//       const answers = {};
+//       formData.forEach((value, key) => {
+//         answers[key] = value;
+//       });
+
+//       try {
+//         const result = await postData(this.imgBase64 || "no-image", answers);
+//         alert("Data berhasil dikirim!");
+//         console.log("Hasil server:", result);
+//         window.location.hash = '/'; // atau ke halaman hasil
+//       } catch (error) {
+//         alert("Gagal mengirim data.");
+//         console.error("Error saat submit:", error);
+//       }
+//     });
+//   }
+// }
+
+import ImageStore from '../model/ImageStore.js';
+import { postData } from '../model/ApiModel.js';
+
+export default class QuestionLayoutList {
+  render() {
+    const wrapper = document.createElement('main');
+    wrapper.className = 'flex flex-col items-center px-4';
+
+    wrapper.innerHTML = `
+      <h2 class="text-pink-400 font-bold text-lg mt-6 mb-4 text-center max-w-md">
+        Silahkan Jawab Pertanyaan dibawah ini untuk hasil yang lebih akurat
+      </h2>
+
+      <form id="acneForm" class="bg-pink-300 shadow-customBox rounded-3xl pt-14 pb-12 px-6 max-w-3xl w-full mx-auto mt-10">
+        <p class="text-white font-semibold text-sm mb-6 text-center max-w-xl mx-auto">
+          Jawablah pertanyaan berikut dengan jujur
+        </p>
+
+        <div class="space-y-6 text-white text-sm">
+          ${this.renderQuestions()}
+        </div>
+
+        <button type="submit"
+          class="bg-[#7bc1cc] hover:bg-[#6aa9b4] text-white font-bold rounded-xl py-3 px-12 mt-10 block mx-auto text-base"
+        >
+          Kirim
+        </button>
+      </form>
+    `;
+
+    this.initEvent(wrapper);
+
+    return wrapper;
+  }
+
+  bindSubmit() {
+    const form = this.main.querySelector('#acneForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const file = ImageStore.get();
+      if (!file) return alert("Gambar tidak tersedia.");
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((val, key) => data[key] = val);
+
+      try {
+        await postData(file, data); // kirim file asli
+        alert('Data berhasil dikirim!');
+        ImageStore.clear();
+      } catch (err) {
+        alert('Gagal mengirim data.');
+        console.error(err);
+      }
+    });
+  }
 }
-
-customElements.define('question-layout', QuestionLayout)

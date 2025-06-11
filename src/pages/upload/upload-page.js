@@ -1,74 +1,76 @@
-import UploadLayout from '../../layouts/upload-layout.js';
-import ConfirmationLayout from '../../layouts/confirmation-layout.js';
-import QuestionLayoutList from '../../layouts/question-list.js';
+// hilangin aja
 
-export default class UploadPage {
-  constructor(selector = '#app') {
-    this.container = document.querySelector(selector);
-    this.imageFile = null;
-    this.imageSrc = null;
-  }
+// import UploadLayout from '../../layouts/upload-layout.js';
+// import ConfirmationLayout from '../../layouts/confirmation-layout.js';
+// import QuestionLayoutList from '../../layouts/question-list.js';
 
-  render() {
-    this.renderUploadPage();
-  }
+// export default class UploadPage {
+//   constructor(selector = '#app') {
+//     this.container = document.querySelector(selector);
+//     this.imageFile = null;
+//     this.imageSrc = null;
+//   }
 
-  renderUploadPage() {
-    const layout = new UploadLayout();
-    const element = layout.render();
-    this.container.replaceChildren(element);
-    this.bindUploadEvents();
-  }
+//   render() {
+//     this.renderUploadPage();
+//   }
 
-  bindUploadEvents() {
-    const input = document.querySelector('#inputGambar');
-    const form = document.querySelector('#uploadForm');
+//   renderUploadPage() {
+//     const layout = new UploadLayout();
+//     const element = layout.render();
+//     this.container.replaceChildren(element);
+//     this.bindUploadEvents();
+//   }
 
-    if (!input || !form) {
-      console.error('Element input atau form tidak ditemukan');
-      return;
-    }
+//   bindUploadEvents() {
+//     const input = document.querySelector('#inputGambar');
+//     const form = document.querySelector('#uploadForm');
 
-    input.addEventListener('change', (e) => {
-      this.imageFile = e.target.files[0];
-    });
+//     if (!input || !form) {
+//       console.error('Element input atau form tidak ditemukan');
+//       return;
+//     }
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!this.imageFile) {
-        alert('Silakan pilih gambar terlebih dahulu!');
-        return;
-      }
+//     input.addEventListener('change', (e) => {
+//       this.imageFile = e.target.files[0];
+//     });
 
-      this.imageSrc = URL.createObjectURL(this.imageFile);
-      this.renderConfirmationPage(this.imageSrc);
-    });
-  }
+//     form.addEventListener('submit', (e) => {
+//       e.preventDefault();
+//       if (!this.imageFile) {
+//         alert('Silakan pilih gambar terlebih dahulu!');
+//         return;
+//       }
 
-  renderConfirmationPage(imgSrc) {
-    const layout = new ConfirmationLayout(imgSrc);
-    const element = layout.render();
-    this.container.replaceChildren(element);
-    this.bindConfirmationEvents();
-  }
+//       this.imageSrc = URL.createObjectURL(this.imageFile);
+//       this.renderConfirmationPage(this.imageSrc);
+//     });
+//   }
 
-  bindConfirmationEvents() {
-    const ulangiBtn = document.querySelector('#ulangiBtn');
-    const prosesBtn = document.querySelector('#prosesBtn');
+//   renderConfirmationPage(imgSrc) {
+//     const layout = new ConfirmationLayout(imgSrc);
+//     const element = layout.render();
+//     this.container.replaceChildren(element);
+//     this.bindConfirmationEvents();
+//   }
 
-    if (!ulangiBtn || !prosesBtn) {
-      console.error('Tombol ulangi atau proses tidak ditemukan');
-      return;
-    }
+//   bindConfirmationEvents() {
+//     const ulangiBtn = document.querySelector('#ulangiBtn');
+//     const prosesBtn = document.querySelector('#prosesBtn');
 
-    ulangiBtn.addEventListener('click', () => this.renderUploadPage());
-    prosesBtn.addEventListener('click', () => this.renderQuestionPage());
-  }
+//     if (!ulangiBtn || !prosesBtn) {
+//       console.error('Tombol ulangi atau proses tidak ditemukan');
+//       return;
+//     }
 
-  renderQuestionPage() {
-    const layout = new QuestionLayoutList(this.imageSrc);
-    const element = layout.render();
-    this.container.replaceChildren(element);
-    layout.bindSubmit();
-  }
-}
+//     ulangiBtn.addEventListener('click', () => this.renderUploadPage());
+//     prosesBtn.addEventListener('click', () => this.renderQuestionPage());
+//   }
+
+//   renderQuestionPage() {
+//     const layout = new QuestionLayoutList(this.imageSrc);
+//     const element = layout.render();
+//     this.container.replaceChildren(element);
+//     layout.bindSubmit();
+//   }
+// }

@@ -1,52 +1,34 @@
-// ApiModel.js
-// export async function postData(imageFile, answers) {
-//   const formData = new FormData();
-//   formData.append('file', imageFile);
 
-//   for (const [key, value] of Object.entries(answers)) {
-//     formData.append(key, value);
-//   }
-//   console.log(formData)
-//   const response = await fetch('http://103.151.145.180:3000/terima', {
-//     method: "POST",
-//     body: formData, // Jangan set Content-Type secara manual
-//   });
-
-//   if (!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   }
-
-//   return response.json();
-// }
-
-export async function postData(imageFile, answers) {
+export async function postData(file, answers) {
   const formData = new FormData();
-  formData.append('file', imageFile);
+  formData.append('file', file);
 
-  for (const [key, value] of Object.entries(answers)) {
-    formData.append(key, value);
+  for (const key in answers) {
+    formData.append(key, answers[key]);
   }
 
-  // 🧪 Tampilkan semua isi formData
-  for (const [key, value] of formData.entries()) {
-    console.log(`${key}:`, value);
+  // cek semua isian FormData satu per satu
+  for (let [key, value] of formData.entries()) {
+    console.log( key, 'value:', value);
   }
 
   try {
-    // const response = await fetch('http://103.151.145.180:3000/terima', {
     const response = await fetch('http://103.151.145.180:3000/terima', {
       method: 'POST',
       body: formData,
     });
-
+    console.log('form file'+formData.file);
+    console.log('form answer'+formData.answers);
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error ${response.status}`);
     }
 
-    return await response.json();
-  } catch (err) {
-    console.error('Fetch gagal:', err);
-    throw err;
+    const result = await response.json();
+    console.log('Response:', result);
+    return result;
+  } catch (error) {
+    console.error('Fetch gagal:', error);
+    throw error;
   }
 }
 
@@ -55,8 +37,6 @@ export async function getQuestion() {
 	const data = await response.json();
 	return data;
 }
-
-
 
 // export async function getQuestion() {
 //   // ganti ini dengan fetch kalau server hidup

@@ -2,73 +2,76 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Test Endpoint /terima</title>
+  <title>Form Prediksi Jerawat</title>
 </head>
 <body>
-  <h2>Form Diagnosa Kulit</h2>
-  <form id="diagnosaForm" enctype="multipart/form-data">
-    <label>Upload Gambar:
-      <input type="file" name="file" required>
-    </label><br><br>
+  <h1>Form Prediksi Jerawat</h1>
 
+  <form id="acne-form">
+    <label>Upload Gambar:
+      <input type="file" name="file" id="fileInput" required>
+    </label>
+    <br><br>
+
+    <!-- Gejala -->
     <label>Komedo Hitam:
-      <select name="komedo_hitam">
+      <select name="komedo_hitam" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Titik Putih:
-      <select name="titik_putih">
+      <select name="titik_putih" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Berisi Nanah:
-      <select name="berisi_nanah">
+      <select name="berisi_nanah" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Benjolan Merah:
-      <select name="benjolan_merah">
+      <select name="benjolan_merah" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Benjolan Besar:
-      <select name="benjolan_besar">
+      <select name="benjolan_besar" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Nyeri:
-      <select name="nyeri">
+      <select name="nyeri" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Merah:
-      <select name="merah">
+      <select name="merah" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Menyatu:
-      <select name="menyatu">
+      <select name="menyatu" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
     </label><br>
 
     <label>Tekstur Keras:
-      <select name="tekstur_keras">
+      <select name="tekstur_keras" required>
         <option value="ya">Ya</option>
         <option value="tidak">Tidak</option>
       </select>
@@ -80,11 +83,28 @@
   <pre id="result"></pre>
 
   <script>
-    document.getElementById('diagnosaForm').addEventListener('submit', async function(e) {
+    document.getElementById('acne-form').addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const form = e.target;
-      const formData = new FormData(form);
+      const file = document.getElementById('fileInput').files[0];
+      const formData = new FormData();
+
+      formData.append('file', file);
+
+      const fields = [
+        'komedo_hitam', 'titik_putih', 'berisi_nanah',
+        'benjolan_merah', 'benjolan_besar', 'nyeri',
+        'merah', 'menyatu', 'tekstur_keras'
+      ];
+
+      fields.forEach(field => {
+        formData.append(field, form[field].value);
+      });
+
+      for (let [key, value] of formData.entries()) {
+        console.log(`FormData key: ${key}, value:`, value);
+      }
 
       try {
         const response = await fetch('http://103.151.145.180:3000/terima', {
@@ -92,11 +112,14 @@
           body: formData
         });
 
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const result = await response.json();
+
         document.getElementById('result').textContent = JSON.stringify(result, null, 2);
       } catch (error) {
-        document.getElementById('result').textContent = 'Terjadi kesalahan: ' + error.message;
-      }
+        document.getElementById('result').textContent = 'Fetch gagal: ' + error;
+        console.error(error);
+      } 
     });
   </script>
 </body>

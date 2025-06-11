@@ -1,4 +1,3 @@
-// src/model/ImageStore.js
 class ImageStore {
   static file = null;
 

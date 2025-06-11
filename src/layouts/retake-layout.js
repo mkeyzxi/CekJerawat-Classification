@@ -1,14 +1,8 @@
-class RetakeLayout extends HTMLElement {
-	constructor() {
-		super();
-	}
+class RetakeLayout {
 
-	connectedCallback() {
-		this.render();
-	}
 
 	render() {
-		this.innerHTML = `
+		return `
 	<main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-8 md:px-0 text-center max-w-md sm:max-w-lg mx-auto h-screen">
   <h2 class="text-[#FF90BB] text-xl sm:text-2xl font-bold mb-2 drop-shadow-[0_0_4px_rgba(255,182,193,0.7)]">
     Apakah Kamu Sudah Yakin dengan Gambar ini?
@@ -47,4 +41,3 @@ class RetakeLayout extends HTMLElement {
 	}
 }	
 
-customElements.define('retake-layout', RetakeLayout)

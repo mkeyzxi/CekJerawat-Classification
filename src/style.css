@@ -44,6 +44,11 @@
 }
 
 .shadow-custom {
-  box-shadow: 0 -10px 30px 1px rgb(41, 40, 40);
+  box-shadow: 0 -30px 50px 1px rgb(41, 40, 40);
   transition: all;
 }
+
+  .tooltip-group:hover .tooltip-label {
+    opacity: 1;
+    transform: translateY(-8px);
+  }

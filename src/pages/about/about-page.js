@@ -4,7 +4,7 @@ export default class AboutPage {
 	render() {
 		return `<div class=" min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-12 py-10 pt-[100px] ">
 	<!-- Title -->
-	<h2 class="font-montserrat font-bold text-[#FF90BB] text-2xl sm:text-3xl md:text-4xl mb-16 text-center">
+	<h2 class="font-montserrat font-bold text-[#FF90BB] text-2xl sm:text-3xl md:text-4xl mb-10 text-center">
 		About Us
 	</h2>
 
@@ -36,7 +36,7 @@ export default class AboutPage {
 		<!-- Loop team member card -->
 	
 
-		<dev-card nama="Galbi Nadifah" role="Integrasi API & DB">
+		<dev-card nama="Galbi Nadifah" role="Integrasi API & DB" foto="/images/about/profile-galbi.jpg">
 		Integrasi API ML, database produk, handle request-response
 		</dev-card>
 
@@ -48,7 +48,7 @@ export default class AboutPage {
 		Desain UI/UX, halaman upload, tampilan hasil rekomendasi
 		</dev-card>
 
-		<dev-card nama="Al Isra Denk Rimakka" role="Data Engineer">
+		<dev-card nama="Al Isra Denk Rimakka" role="Data Engineer" foto="/images/about/profile-isra.png">
 		Data preprocessing, image augmentation, cleaning dataset
 		</dev-card>
 

@@ -54,7 +54,7 @@
 export default class ResultPage {
 	render() {
 		return `
-<main class="flex flex-col justify-center items-center min-h-screen px-4 py-8">
+<main class="flex flex-col justify-center items-center min-h-screen px-4 py-8 mt-10">
   <section class="text-center w-full max-w-sm">
     <header>
       <h3 class="text-[#8ACCD5] font-semibold text-lg sm:text-xl md:text-2xl mb-6">

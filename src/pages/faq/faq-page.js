@@ -9,7 +9,7 @@ export default class FaqPage {
     return `
       <section class="max-w-3xl mx-auto mt-18 p-4 space-y-2">
          <h2 class="text-center text-[#FF90BB] text-xl sm:text-2xl font-bold mb-8 drop-shadow-[0_0_4px_rgba(255,182,193,0.7)]">
-        Pendapat <span class="text-[#8ACCD5] font-semibold">Pengguna</span> Kami
+        Seputar <span class="text-[#8ACCD5] font-semibold">Pertanyaan</span>
       </h2>
         ${this.faqData
           .map(

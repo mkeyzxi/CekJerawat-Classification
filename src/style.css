@@ -36,3 +36,9 @@
 	position: fixed;
 	width: 100%;
 }
+
+.navActive {
+  background-color: #FF90BB;
+  color: white;
+  
+}

@@ -12,6 +12,8 @@ class HeaderComponent extends HTMLElement {
 		this.#mobileNav = this.querySelector('#mobile-nav');
 		this.menuToggle();
 		this.onScroll();
+		this.handleActive();
+		
 	}
 
 	render() {
@@ -25,7 +27,7 @@ class HeaderComponent extends HTMLElement {
 		
 		  	<button id="menu-humburger" class="md:hidden w-8 flex flex-col justify-center items-center gap-[4px] group ">
 				<span
-					class="block w-[70%] h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
+					class="block w-[70%] h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]" ></span>
 				<span
 					class="block w-full h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
 				<span
@@ -33,25 +35,25 @@ class HeaderComponent extends HTMLElement {
 				<span
 					class="block w-[70%] h-[2px] bg-gray-700 rounded transition-all duration-300 group-hover:bg-[#FF90BB]"></span>
 			</button></div>
-		  <nav class="space-x-6 text-sm font-medium hidden md:flex">
-			<a class="bg-[#FF90BB] text-white px-4 py-2 rounded-md hover:bg-pink-500 transition" href="#/">
+		  <nav class="space-x-2 text-sm font-medium hidden md:flex">
+			<a class="navActive text-pink-300 px-4 py-2 rounded-md transition" href="#/" >
 			  Beranda
 			</a>
-			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/unggah">
+			<a class="text-pink-300 px-4 py-2 rounded-md transition" href="#/unggah">
 			  Unggah
 			</a>
-			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/testimoni">
+			<a class="text-pink-300 px-4 py-2 rounded-md transition" href="#/testimoni">
 			  Testimoni
 			</a>
-			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/tentang" >
+			<a class="text-pink-300 px-4 py-2 rounded-md transition" href="#/tentang" >
 			  Tentang
 			</a>
-			<a class="text-pink-300 hover:text-[#FF90BB] transition flex justify-center items-center" href="#/faq" >
+			<a class="text-pink-300 px-4 py-2 rounded-md transition" href="#/faq" >
 			  FAQ
 			</a>
 			
 		  </nav>
-		  <nav id="mobile-nav" class="flex bg-white/30 items-center justify-between px-4 py-2 blur-6 backdrop-blur  shadow-md md:hidden fixed bottom-0 inset-x-0 text-gray-800">
+		  <nav id="mobile-nav" class="hidden flex bg-white/30 items-center justify-between px-4 py-2 blur-6 backdrop-blur  shadow-md md:hidden fixed bottom-0 inset-x-0 text-gray-800">
 	<ul class="flex flex-row justify-around items-center space-x-6 w-full ">
 		
 		<li>
@@ -105,10 +107,22 @@ class HeaderComponent extends HTMLElement {
 		</header>
 	  `;
 	}
+	handleActive() {
+	const desktopNav = this.querySelector('nav.md\\:flex'); 
 
+	if (!desktopNav) return;
+
+	desktopNav.addEventListener('click', (e) => {
+		const target = e.target.closest('a');
+		if (!target) return;
+		const links = desktopNav.querySelectorAll('a');
+		links.forEach(link => link.classList.remove('navActive'));
+
+		// tambahkan class ke link yang diklik
+		target.classList.add('navActive');
+	});
+}
 	menuToggle() {
-		
-		
 		// const mobileUl = this.querySelector('#mobile-nav');
 
 		this.#menuButton.addEventListener('click', () => {
@@ -138,7 +152,10 @@ class HeaderComponent extends HTMLElement {
 
 		previousScrollPosition = currentScrollPosition;
 	});
+
+
 }
+
 
 }
 

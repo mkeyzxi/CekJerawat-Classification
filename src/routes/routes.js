@@ -12,6 +12,7 @@ import QuestionLayoutList from '../layouts/question-list.js';
 import ConfirmationLayout from '../layouts/confirmation-layout.js';
 // import '../layouts/upload-layout.js';
 // C:\belajarku\Semester 6\DBS Foundation FEBE\acne-clasification-app\src\layouts\upload-layout.js
+import dummyFaq from '../pages/faq/dummyFaq.js';
 
 export const routes = {
 	'/': () => new HomePage(),
@@ -25,7 +26,7 @@ export const routes = {
 	// '/testimoni': () => new ,
 	'/testimoni': () => new TestimoniPage(),
 	'/tentang': () => new AboutPage(),
-	'/faq': () => new FaqPage(),
+	'/faq': () => new FaqPage(dummyFaq),
 	 '/unggah': () => new UploadLayout(),
   '/konfirmasi': () => new ConfirmationLayout(),
   '/pertanyaan': () => new QuestionLayoutList(),

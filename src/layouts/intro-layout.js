@@ -20,9 +20,9 @@ class IntroLayout extends HTMLElement {
     <p class="text-pink-300 text-sm md:text-base mb-6 md:mb-8 max-w-md mx-auto md:mx-0">
       Upload foto, dapatkan jenis jerawat dan rekomendasi obat totol secara cepat dan gratis.
     </p>
-    <button class="bg-[#FF90BB] text-white text-sm md:text-base w-full md:w-auto font-semibold rounded-full px-6 py-2 hover:bg-pink-500 transition">
+    <a href="#/unggah" class="bg-[#FF90BB] text-white text-sm md:text-base w-full md:w-auto font-semibold rounded-full px-6 py-2 hover:bg-pink-500 transition">
       Mulai Sekarang
-    </button>
+    </a>
   </div>
 
  

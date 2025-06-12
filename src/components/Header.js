@@ -18,7 +18,7 @@ class HeaderComponent extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-		<header id="header" class="flex justify-between items-center px-7 md:px-12 py-3 relative z-20 bg-white">
+		<header id="header" class="flex justify-between items-center px-7 md:px-12 py-3 relative z-20 bg-white/50 transition-all backdrop-blur-md">
 	
 		  <div class="text-2xl font-bold flex">
 			<div class="text-[#FF90BB]">Cek</div><div class="text-[#8ACCD5]">Jerawat</div>
@@ -136,9 +136,15 @@ class HeaderComponent extends HTMLElement {
 
 	onScroll() {
 	let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
+	
 	document.addEventListener('scroll', () => {
+		
 		let currentScrollPosition = window.pageYOffset;
+		if(currentScrollPosition > 50){
+			this.#header.classList.add('shadow-custom');
+		}else {
+			this.#header.classList.remove('shadow-custom');
+		}
 
 		if (previousScrollPosition > currentScrollPosition) {
 			this.#header.style.top = "0";

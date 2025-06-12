@@ -1,7 +1,7 @@
 export default class TestimoniPage {
 	render() {
 		return `
-    <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full md:h-screen py-10 pt-[100px] md:pt-0">
+    <main class="flex-grow flex flex-col items-center justify-center mt-5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full md:h-screen py-10 pt-[100px] md:pt-0">
       <h2 class="text-center text-[#FF90BB] text-xl sm:text-2xl font-bold mb-8 drop-shadow-[0_0_4px_rgba(255,182,193,0.7)]">
         Pendapat <span class="text-[#8ACCD5] font-semibold">Pengguna</span> Kami
       </h2>
@@ -53,47 +53,50 @@ export default class TestimoniPage {
               "Desainnya menarik, informasinya jelas, dan saya merasa lebih percaya diri setelah menggunakannya."
             </p>
           </article>
-          <!-- Testimoni 3 -->
-          <article class="bg-white text-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-            <div class="flex items-center mb-4">
-              <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Dewi Lestari" class="w-10 h-10 rounded-full object-cover mr-3" />
-              <div>
-                <h3 class="font-semibold text-[#FF90BB] text-sm">Dewi Lestari</h3>
-                <p class="text-[#8ACCD5] text-xs">Ibu Rumah Tangga</p>
-              </div>
-            </div>
-            <p class="text-sm leading-snug">
-              "Desainnya menarik, informasinya jelas, dan saya merasa lebih percaya diri setelah menggunakannya."
-            </p>
-          </article>
-          <!-- Testimoni 3 -->
-          <article class="bg-white text-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-            <div class="flex items-center mb-4">
-              <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Dewi Lestari" class="w-10 h-10 rounded-full object-cover mr-3" />
-              <div>
-                <h3 class="font-semibold text-[#FF90BB] text-sm">Dewi Lestari</h3>
-                <p class="text-[#8ACCD5] text-xs">Ibu Rumah Tangga</p>
-              </div>
-            </div>
-            <p class="text-sm leading-snug">
-              "Desainnya menarik, informasinya jelas, dan saya merasa lebih percaya diri setelah menggunakannya."
-            </p>
-          </article>
-          <!-- Testimoni 3 -->
-          <article class="bg-white text-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-            <div class="flex items-center mb-4">
-              <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Dewi Lestari" class="w-10 h-10 rounded-full object-cover mr-3" />
-              <div>
-                <h3 class="font-semibold text-[#FF90BB] text-sm">Dewi Lestari</h3>
-                <p class="text-[#8ACCD5] text-xs">Ibu Rumah Tangga</p>
-              </div>
-            </div>
-            <p class="text-sm leading-snug">
-              "Desainnya menarik, informasinya jelas, dan saya merasa lebih percaya diri setelah menggunakannya."
-            </p>
-          </article>
-        </div>
+        <!-- Testimoni 1 -->
+<article class="bg-white text-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+  <div class="flex items-center mb-4">
+    <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="Ayu Kartika" class="w-10 h-10 rounded-full object-cover mr-3" />
+    <div>
+      <h3 class="font-semibold text-[#FF90BB] text-sm">Ayu Kartika</h3>
+      <p class="text-[#8ACCD5] text-xs">Mahasiswi</p>
+    </div>
+  </div>
+  <p class="text-sm leading-snug">
+    "Rekomendasi produknya baik banget! Nggak nyangka hasilnya secepat itu dan cocok di kulitku."
+  </p>
+</article>
 
+<!-- Testimoni 2 -->
+<article class="bg-white text-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+  <div class="flex items-center mb-4">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rizky Aditya" class="w-10 h-10 rounded-full object-cover mr-3" />
+    <div>
+      <h3 class="font-semibold text-[#FF90BB] text-sm">Rizky Aditya</h3>
+      <p class="text-[#8ACCD5] text-xs">Karyawan Swasta</p>
+    </div>
+  </div>
+  <p class="text-sm leading-snug">
+    "Sistemnya cerdas, nggak ribet, langsung tahu jenis jerawat dan solusi yang pas!"
+  </p>
+</article>
+
+<!-- Testimoni 3 -->
+<article class="bg-white text-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+  <div class="flex items-center mb-4">
+    <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Laras Nurani" class="w-10 h-10 rounded-full object-cover mr-3" />
+    <div>
+      <h3 class="font-semibold text-[#FF90BB] text-sm">Laras Nurani</h3>
+      <p class="text-[#8ACCD5] text-xs">Content Creator</p>
+    </div>
+  </div>
+  <p class="text-sm leading-snug">
+    "Aplikasinya user-friendly, dan hasil diagnosanya bikin aku lebih aware sama kondisi kulit sendiri."
+  </p>
+</article>
+
+        </div>
+        
 		</section>
 		</main>
 		`;

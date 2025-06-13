@@ -20,17 +20,17 @@ class DevCard extends HTMLElement {
   render() {
     this.innerHTML = `
       <article class="text-white bg-transparent">
-        <header class="flex items-center space-x-4 mb-4 sm:mb-6">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white flex-shrink-0 overflow-hidden" aria-label="Foto Developer">
+        <header class="flex items-center space-x-4 mb-2 sm:mb-4">
+          <div class="w-15 h-15 sm:w-22 sm:h-22 rounded-full bg-white flex-shrink-0 overflow-hidden" aria-label="Foto Developer">
   <img src="${this.#foto}" class="w-full h-full object-cover object-center" alt="foto profile ${this.#nama}" />
 </div>
 
-          <div class="flex flex-wrap items-center space-x-2 bg-white rounded-full px-4 sm:px-5 py-3 sm:py-2 text-sm font-semibold gap-0 md:gap-2">
-            <h3 class="text-[#FF90BB]" ">${this.#nama}</h3>
+          <div class="flex flex-wrap items-center space-x-2 bg-white rounded-full px-4 sm:px-5 py-3 sm:py-2 text-sm font-semibold gap-0 md:gap-2 w-full fles justify-items-start">
+            <h3 class="text-[#FF90BB] ">${this.#nama}</h3>
             <span class="text-[#8ACCD5]">${this.#role}</span>
           </div>
         </header>
-        <section class="ml-16" aria-label="Tugas Developer">
+        <section class="md:ml-16" aria-label="Tugas Developer">
           <p class="text-sm sm:text-base leading-snug">
             ${this.#tugas}
           </p>

@@ -36,19 +36,7 @@ export default class AboutPage {
 		<!-- Loop team member card -->
 	
 
-		<dev-card nama="Galbi Nadifah" role="Integrasi API & DB" foto="/images/about/profile-galbi.jpg">
-		Integrasi API ML, database produk, handle request-response
-		</dev-card>
-
-		<dev-card nama="Muhammad Makbul N" role="Front End Developer" foto="/images/about/profile-mbul.png">
-  Implementasi responsive website, validasi input gambar
-</dev-card>
-
-		<dev-card nama="Muh. Ilham Akbar" role="UI/
-		X Designer">
-		Desain UI/UX, halaman upload, tampilan hasil rekomendasi
-		</dev-card>
-
+	
 		<dev-card nama="Al Isra Denk Rimakka" role="Data Engineer" foto="/images/about/profile-isra.png">
 		Data preprocessing, image augmentation, cleaning dataset
 		</dev-card>
@@ -59,6 +47,18 @@ export default class AboutPage {
 
 		<dev-card nama="Timothy Gilbert Hadiwiyono" role="DevOps" foto="/images/about/profile-timothy.jpg">
 		Deployment model, integrasi dengan backend (API endpoint)
+		</dev-card>
+	<dev-card nama="Galbi Nadifah" role="Integrasi API & DB" foto="/images/about/profile-galbi.jpg">
+		Integrasi API ML, database produk, handle request-response
+		</dev-card>
+
+		<dev-card nama="Muhammad Makbul N" role="Front End Developer" foto="/images/about/profile-mbul.png">
+  Implementasi responsive website, validasi input gambar
+</dev-card>
+
+		<dev-card nama="Muh. Ilham Akbar" role="UI/
+		X Designer">
+		Desain UI/UX, halaman upload, tampilan hasil rekomendasi
 		</dev-card>
 
 	</section>

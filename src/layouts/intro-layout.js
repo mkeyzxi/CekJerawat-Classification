@@ -37,7 +37,7 @@ class IntroLayout extends HTMLElement {
       width="465px"
       height="595px"
       alt="Smiling woman with clear skin touching her face" 
-      class=" h-auto object-cover hidden lg:block absolute bottom-0 right-0"
+      class=" h-auto object-cover hidden lg:block absolute bottom-[100vh] right-0"
     />
   </div>
    

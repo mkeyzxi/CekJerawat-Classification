@@ -9,7 +9,7 @@ class WhatforLayout extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-	 <div class="flex-grow max-w-full h-screen pb-5 flex flex-col shadow-lg justify-center items-center">
+	 <div class="flex-grow max-w-full h-screen pb-5 flex flex-col shadow-lg justify-center items-center relative ">
   <div class="text-center ">
     <h2 class="text-[#FF90BB] text-3xl sm:text-4xl md:text-5xl font-semibold p-2">
       Apa yang Dapat Dilakukan AI untuk Anda?

@@ -44,7 +44,8 @@ export default class AboutPage {
   Implementasi responsive website, validasi input gambar
 </dev-card>
 
-		<dev-card nama="Muh. Ilham Akbar" role="UI/UX Designer">
+		<dev-card nama="Muh. Ilham Akbar" role="UI/
+		X Designer">
 		Desain UI/UX, halaman upload, tampilan hasil rekomendasi
 		</dev-card>
 
@@ -52,11 +53,11 @@ export default class AboutPage {
 		Data preprocessing, image augmentation, cleaning dataset
 		</dev-card>
 
-		<dev-card nama="Amir Hamzah" role="ML Engineer">
+		<dev-card nama="Amir Hamzah" role="ML Engineer" foto="/images/about/profile-mirza.jpg">
 		Machine Learning Model training, tuning parameter, evaluasi akurasi
 		</dev-card>
 
-		<dev-card nama="Timothy Gilbert Hadiwiyono" role="DevOps">
+		<dev-card nama="Timothy Gilbert Hadiwiyono" role="DevOps" foto="/images/about/profile-timothy.jpg">
 		Deployment model, integrasi dengan backend (API endpoint)
 		</dev-card>
 

@@ -31,6 +31,7 @@ export const routes = {
   '/konfirmasi': () => new ConfirmationLayout(),
   '/pertanyaan': () => new QuestionLayoutList(),
   '/hasil': () => new ResultPage(),
+//   '*': () => dialihkan ke utils,
 // '/pertanyaan': () => {
 //   const layout = new QuestionLayoutList(localStorage.getItem('uploadedImageSrc') || '');
 //   return layout.render(); 

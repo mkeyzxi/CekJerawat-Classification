@@ -132,13 +132,14 @@ class HeaderComponent extends HTMLElement {
 		</header>
 	  `;
 	}
-	handleActive() {
+
+handleActive() {
   const links = this.querySelectorAll('a[href^="#"]');
   const currentHash = location.hash || '#/';
-
   links.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentHash) {
+    const isUnggah = currentHash.startsWith('#/unggah') && href === '#/unggah';
+    if (href === currentHash || isUnggah) {
       link.classList.add('navActive');
     } else {
       link.classList.remove('navActive');
@@ -149,7 +150,8 @@ class HeaderComponent extends HTMLElement {
     const newHash = location.hash || '#/';
     links.forEach(link => {
       const href = link.getAttribute('href');
-      if (href === newHash) {
+      const isUnggah = newHash.startsWith('#/unggah') && href === '#/unggah';
+      if (href === newHash || isUnggah) {
         link.classList.add('navActive');
       } else {
         link.classList.remove('navActive');

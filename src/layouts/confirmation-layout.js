@@ -40,7 +40,7 @@ export default class ConfirmationLayout {
     });
 
     btnProses.addEventListener('click', () => {
-      window.location.hash = '#/pertanyaan';
+      window.location.hash = '#/unggah/pertanyaan';
     });
   }
 }

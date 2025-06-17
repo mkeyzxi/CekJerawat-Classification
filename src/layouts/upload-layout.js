@@ -14,7 +14,7 @@ export default class UploadLayout {
         if (!file) return alert("Harap pilih gambar.");
 
         ImageStore.set(file); // simpan gambar di global store
-        window.location.hash = '#/konfirmasi';
+        window.location.hash = '#/unggah/konfirmasi';
       });
     }, 0);
 

@@ -79,7 +79,7 @@ export default class QuestionLayoutList {
       try {
         await postData(imageFile, answers);
         alert('Data berhasil dikirim!');
-        window.location.hash = '#/hasil'; // arahkan ke halaman hasil jika ada
+        window.location.hash = '#/unggah/hasil'; // arahkan ke halaman hasil jika ada
       } catch (err) {
         console.log(imageFile,answers )
         alert('Gagal mengirim data.');
